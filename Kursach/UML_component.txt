@@ -1,0 +1,98 @@
+@startuml
+() HTTP
+() TCPIP
+
+node "Web Client" {
+
+component browser [
+"executable"
+
+Web Browser
+]
+
+browser - HTTP
+
+}
+
+node "Web Server" {
+
+package "Design" {
+
+component style [
+"file"
+
+style.css
+]
+
+component main [
+"file"
+
+main.css
+]
+
+}
+
+
+package "Script" {
+
+component min [
+"file"
+
+jquery.min.js
+]
+
+component libs [
+"file"
+
+libs.min.js
+]
+
+
+component main [
+"file"
+
+main.js
+]
+
+}
+
+component index [
+"document"
+
+index.php
+]
+
+component template [
+"document"
+
+template.php
+]
+
+
+index ..> "Script"
+index ..> "Design"
+index ..> template
+}
+
+node "MySQL Database Server" {
+component db [
+"database"
+
+telcom-db
+]
+
+component table [
+"tables"
+
+...
+]
+
+db ..> table
+
+}
+
+
+"Web Server" - TCPIP
+"MySQL Database Server" - TCPIP
+HTTP - "Web Server"
+@enduml
