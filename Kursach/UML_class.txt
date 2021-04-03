@@ -1,0 +1,74 @@
+@startuml
+class Contract {
+   id : number
+   date : date
+   number : string
+   deal_id : number
+   user_id : number
+   employee_id : number
+   state : varchar
+}
+class Service {
+   id : number
+   service_name : string
+   service_price : number
+   service_descr : string
+}
+class Extra {
+   id : number
+   service_id : number
+   contract_id : number
+   start_date : date
+   end_date : date
+}
+class User {
+   id : number
+   fio : string
+   passport_ser : string
+   passport_num : string
+   date_of_birth : date
+   address : string
+   email : string
+}
+class Number {
+   id : number
+   number : string
+   occupied : string
+}
+class Employee {
+   id : number
+   employee_name : string
+   position : string
+   e_login : string
+   e_pass : string
+}
+class Deal {
+   id : number
+   deal_name : string
+   minutes : number
+   data : number
+   sms : number
+   price : number
+   deal_descr : string
+   socials : string
+   unlimited : string
+}
+
+class Account {
+   id : number
+   contract_id : number
+   minutes : number
+   data : number
+   sms : number
+   balance : number
+   password : string
+}
+
+Contract *-- Number
+Contract *-- Deal
+Contract *-- User
+Contract *-- Employee
+Contract --* Extra
+Contract --* Account
+Extra *-- Service
+@enduml
