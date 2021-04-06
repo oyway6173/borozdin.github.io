@@ -1,4 +1,12 @@
 @startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+hide circle
+hide methods
+
 class Contract {
    id : number
    date : date
@@ -64,11 +72,11 @@ class Account {
    password : string
 }
 
-Contract *-- Number
-Contract *-- Deal
-Contract *-- User
-Contract *-- Employee
-Contract --* Extra
-Contract --* Account
-Extra *-- Service
+Contract --* Number
+Contract --* Deal
+Contract --* User
+Contract --* Employee
+Contract *-- Extra
+Contract *-- Account
+Extra --* Service
 @enduml
