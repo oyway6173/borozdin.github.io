@@ -1,4 +1,8 @@
 @startuml
+skinparam monochrome true
+hide circle
+hide methods
+
 left to right direction
 actor P1 as "Пользователь системы"
 actor P1_1 as "Абонент"
